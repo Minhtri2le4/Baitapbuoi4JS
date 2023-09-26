@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhtrishop</title>
+</head>
+<body>
+    <h1>Giỏ Hàng Thanh Toán</h1>
+<pre>
+<label for="quantity">Số lượng:</label>
+<input type="number" id="quantity" min="0">
+</pre>
+</br>
+<pre>
+<label for="price">Giá sản phẩm (mỗi cái):</label>
+<input type="number" id="price" min="0">
+</pre>
+
+
+    <h4 id="total">Tổng giá tiền: 0</h4>
+    <input type="text" placeholder="Nhập mã giảm giá nếu có">
+    <button id="buyButton">Mua Ngay</button>
+    
+
+
+<marquee direction="left">Liên hệ hotline: 0325477841 để nhận mã giảm giá</marquee>
+
+    <script>
+        // Lấy tham chiếu đến các phần tử trên trang
+        const quantityInput = document.getElementById("quantity");
+        const priceInput = document.getElementById("price");
+        const totalDisplay = document.getElementById("total");
+
+        // Gắn sự kiện 'input' cho cả hai ô nhập liệu
+        quantityInput.addEventListener("input", updateTotal);
+        priceInput.addEventListener("input", updateTotal);
+
+        // Hàm tính tổng giá tiền
+        function updateTotal() {
+            const quantity = parseFloat(quantityInput.value) || 0;
+            const price = parseFloat(priceInput.value) || 0;
+            const total = quantity * price;
+
+            // Hiển thị tổng giá tiền
+            totalDisplay.textContent = `Tổng giá tiền: ${total.toFixed(2)} đồng`;
+        }
+        buyButton.addEventListener("click", function() {
+            alert("Mua thành công!");
+        });
+    </script>
+</body>
+</html>
