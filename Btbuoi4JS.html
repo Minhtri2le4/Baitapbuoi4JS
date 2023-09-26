@@ -1,21 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minhtrishop</title>
-</head>
-<body>
-    <h1>Giỏ Hàng Thanh Toán</h1>
-<pre>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+    <title>Hello World!</title>
+    <style>
+      #trai{
+        background-color:gray;
+        width:60%;
+        height:800px;
+        float:left;
+      }
+      #phai{
+        background-color:pink;
+        width:40%;
+        height:800px;
+        float:left;
+      }
+      .a{
+            display: inline-block;
+            width: 250px;
+            margin: 30px;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+    </style>
+  </head>
+  <body>
+    <div id=trai>
+    <h1>Giỏ Hàng</h1>
+      <div class="a">
+        
+            <img src="https://shopdunk.com/images/thumbs/0007808_iphone-14-pro-max-128gb_240.png" >
+            <h2>Iphone 14 Pro Max 128gb</h2>
+            <p>26.150.000</p>
+              <pre>
 <label for="quantity">Số lượng:</label>
 <input type="number" id="quantity" min="0">
-</pre>
-</br>
-<pre>
+
 <label for="price">Giá sản phẩm (mỗi cái):</label>
 <input type="number" id="price" min="0">
-</pre>
+
+      
+        </div>
+    </div>
+    <div id=phai>
+
 
 
     <h4 id="total">Tổng giá tiền: 0</h4>
@@ -27,27 +61,29 @@
 <marquee direction="left">Liên hệ hotline: 0325477841 để nhận mã giảm giá</marquee>
 
     <script>
-        // Lấy tham chiếu đến các phần tử trên trang
+        
         const quantityInput = document.getElementById("quantity");
         const priceInput = document.getElementById("price");
         const totalDisplay = document.getElementById("total");
 
-        // Gắn sự kiện 'input' cho cả hai ô nhập liệu
+        
         quantityInput.addEventListener("input", updateTotal);
         priceInput.addEventListener("input", updateTotal);
 
-        // Hàm tính tổng giá tiền
+
         function updateTotal() {
             const quantity = parseFloat(quantityInput.value) || 0;
             const price = parseFloat(priceInput.value) || 0;
             const total = quantity * price;
 
-            // Hiển thị tổng giá tiền
+            
             totalDisplay.textContent = `Tổng giá tiền: ${total.toFixed(2)} đồng`;
         }
         buyButton.addEventListener("click", function() {
             alert("Mua thành công!");
         });
     </script>
-</body>
+    
+    </div>
+  </body>
 </html>
